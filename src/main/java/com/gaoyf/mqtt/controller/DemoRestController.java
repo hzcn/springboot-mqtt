@@ -60,6 +60,7 @@ public class DemoRestController {
         contentList.add("hotel_sub_gateway002");
         System.out.println("for test");
         System.out.println("for test");
+        System.out.println("for test");
 
 
         for (int i = 0; i<contentList.size(); i++) {
