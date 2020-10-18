@@ -5,7 +5,7 @@ package com.gaoyf.mqtt.core;
  */
 public abstract class MQTTConfig {
 
-    protected String ip = "127.0.0.1";
+    protected String ip = "116.62.206.168";
 
     /**
      * qos0 对于client而言，有且仅发一次publish包，对于broker而言，有且仅发一次publish，简而言之，就是仅发一次包，是否收到完全不管，适合那些不是很重要的数据。
@@ -15,11 +15,11 @@ public abstract class MQTTConfig {
      * publisher和broker进行了缓存，其中publisher缓存了message和msgID，而broker缓存了msgID，两方都做记录所以可以保证消息不重复，
      * 但是由于记录是需要删除的，这个删除流程同样多了一倍
      */
-    protected int qos = 2;
+    protected int qos = 0;
 
     protected Boolean hasSSL = false; /* By default SSL is disabled */
 
-    protected Integer port = 1883; /* Default port */
+    protected Integer port = 1943; /* Default port */
 
     protected String username = "账号";
 

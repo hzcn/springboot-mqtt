@@ -3,12 +3,18 @@ package com.gaoyf.mqtt.controller;
 import com.gaoyf.mqtt.core.IMQTTPublisher;
 import com.gaoyf.mqtt.core.IMQTTSubscriber;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import com.alibaba.fastjson.JSONArray;
+//import com.alibaba.fastjson.JSONObject;
+import java.util.ArrayList;
+
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 /**
  * @author gaoyf
@@ -16,9 +22,11 @@ import javax.annotation.PostConstruct;
  * <p>
  * 测试controller
  */
+
 @RestController
 public class DemoRestController {
-    public static String TOPIC_LOOP_TEST = "mqtt/loop/message";
+//    public static String TOPIC_LOOP_TEST = "mqtt/loop/message";
+    public static String TOPIC_LOOP_TEST = "hotel_sub_gateway002";
 
     @Autowired
     IMQTTPublisher publisher;
@@ -43,9 +51,20 @@ public class DemoRestController {
      * @param data 数据
      * @return 响应
      */
-    @RequestMapping(value = "/mqtt/loop/message", method = RequestMethod.POST)
+    @RequestMapping(value = "/mqtt/push/message", method = RequestMethod.POST)
     public String index(@RequestBody String data) {
-        publisher.publishMessage(TOPIC_LOOP_TEST, data);
+        System.out.println(data);
+        List<String> contentList = new ArrayList<>();
+        contentList.add("hote_sub_gateway");
+        contentList.add("hotel_sub_gateway001");
+        contentList.add("hotel_sub_gateway002");
+        System.out.println("for test");
+
+
+        for (int i = 0; i<contentList.size(); i++) {
+        publisher.publishMessage(contentList.get(i), data);
+
+    }
         return "Success";
     }
 
