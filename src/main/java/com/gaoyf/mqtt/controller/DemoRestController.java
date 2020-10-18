@@ -64,12 +64,13 @@ public class DemoRestController {
         System.out.println("for test");
         System.out.println("for test");
         System.out.println("for test");
+        System.out.println("for test");
 
 
-        for (int i = 0; i<contentList.size(); i++) {
-        publisher.publishMessage(contentList.get(i), data);
+        for (String s : contentList) {
+            publisher.publishMessage(s, data);
 
-    }
+        }
         return "Success";
     }
 
