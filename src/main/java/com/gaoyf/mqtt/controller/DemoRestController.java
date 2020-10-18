@@ -58,15 +58,8 @@ public class DemoRestController {
         contentList.add("hote_sub_gateway");
         contentList.add("hotel_sub_gateway001");
         contentList.add("hotel_sub_gateway002");
-        System.out.println("for test");
-        System.out.println("for test");
-        System.out.println("for test");
-        System.out.println("for test");
-        System.out.println("for test");
-        System.out.println("for test");
-        System.out.println("for test");
-        System.out.println("for test");
-        System.out.println("for test");
+
+
 
 
         for (String s : contentList) {
