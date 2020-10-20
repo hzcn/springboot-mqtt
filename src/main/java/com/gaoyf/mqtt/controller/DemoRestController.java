@@ -53,7 +53,7 @@ public class DemoRestController {
      */
     @RequestMapping(value = "/mqtt/push/message", method = RequestMethod.POST)
     public String index(@RequestBody String data) {
-        System.out.println(data);
+
 
         List<String> contentList = new ArrayList<>();
         contentList.add("hote_sub_gateway");
